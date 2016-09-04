@@ -1,6 +1,10 @@
 console.log('debug in the console of your index.html file');
 
 // define loop here
+var loop = function (collection, elem){
+	for (var i=0; i<collection.length; i++)
+		console.log (collection[i]);
+}
 
 
 
@@ -10,7 +14,7 @@ var transform = function(collection, callback){
     result = [];
 
     loop(collection, function(index, element){
-        result.push(callback, element);
+        result.push(element); //removed callback - can only return one item
     });
 
     return result;
@@ -25,6 +29,7 @@ var doubleNumbers = transform(numbers, function(elem){
 }); // should return: [2, 4, 6, 8, 10];
 
 
+console.log(doubleNumbers(numbers));
 
 
 
